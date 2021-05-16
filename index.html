@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
+        integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"
+        integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp"
+        crossorigin="anonymous"></script>
+    <script async defer src="main.js"></script>
+</head>
+<div id="wrapper">
+    <h1>Parametric Equation Animations</h1>
+    <canvas id="canvas" width="480" height="325"></canvas>
+    <br>
+    <div class="parameter">
+        <label for="r" id="label_r"></label>
+        <input id="r" type="range" name="r" oninput="updateR();" min="10" max="150" value="100" step="1" />
+    </div>
+    <div class="parameter">
+        <label for="dt" id="label_dt"></label>
+        <input id="dt" type="range" name="dt" oninput="updateDt();" min="0.005" max="1.000" value="0.025" step="0.001" />
+    </div>
+    <button onclick="defaults()">Defaults</button>
+    <br>
+    <div class="parameter">
+        <label for="a" id="label_a"></label>
+        <input id="a" type="range" name="a" oninput="updateA();" min="1" max="20" value="1" step="1" />
+    </div>
+    <div class="parameter">
+        <label for="b" id="label_b"></label>
+        <input id="b" type="range" name="b" oninput="updateB();" min="1" max="20" value="6" step="1" />
+    </div>
+    <div class="parameter">
+        <label for="c" id="label_c"></label>
+        <input id="c" type="range" name="c" oninput="updateC();" min="1" max="20" value="14" step="1" />
+    </div>
+    <br>
+    <h2>Click on a parametric equation</h2>
+    <ul id="equations">
+        <li onclick="stop(); drawEQ1(); highlight('eq1');" id="eq1"></li>
+        <li onclick="stop(); drawEQ2(); highlight('eq2');" id="eq2"></li>
+        <li onclick="stop(); drawEQ3(); highlight('eq3');" id="eq3"></li>
+        <li onclick="stop(); drawEQ4(); highlight('eq4');" id="eq4"></li>
+        <li onclick="stop(); drawEQ5(); highlight('eq5');" id="eq5"></li>
+    </ul>
+</div>
+
+</html>
